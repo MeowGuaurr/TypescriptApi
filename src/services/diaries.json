@@ -6,14 +6,14 @@
     "comment" : "So much clouds"
 },
 {
-    "id" : 1,
+    "id" : 2,
     "date" : "2020-01-02",
     "weather" : "cloudy",
     "visibility" : "good",
     "comment" : "Less clouds than yesterday"
 },
 {
-    "id" : 1,
+    "id" : 3,
     "date" : "2020-01-03",
     "weather" : "sunny",
     "visibility" : "good",
