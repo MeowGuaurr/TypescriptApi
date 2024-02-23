@@ -9,7 +9,7 @@ const app = (0, express_1.default)();
 app.use(express_1.default.json());
 const PORT = 3000;
 app.get('/test', (_req, res) => {
-    console.log("someone is testing " + new Date().toLocaleDateString());
+    console.log('someone is testing ' + new Date().toLocaleDateString());
     res.send('testing approved ' + new Date().toLocaleDateString());
 });
 app.use('/api/diaries', diaries_1.default);

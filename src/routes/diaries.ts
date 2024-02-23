@@ -1,5 +1,6 @@
 import express from 'express'
 import * as diaryServices from "../services/diary"
+import toNewDiaryEntry from '../utils'
 
 const router = express.Router()
 
@@ -15,10 +16,10 @@ router.post('/', (req, res) => {
 
     res.json(newDiaryEntry)
 
-  } catch (e) {
-    res.status(400).send(e.message)
-  }
-})
+  } catch (error) {
+    res.send(400)
+    console.log('error')
+}})
 
 router.get('/:id', (req, res) => {
   // transform req.params.id which is a string because is a param, to Number 
@@ -26,7 +27,6 @@ router.get('/:id', (req, res) => {
   return (diary != null)
     ? res.send(diary)
     : res.send(404)
-  // res.send(diaryServices.getEntryWithoutSensitiveInfo())
 })
 
 export default router

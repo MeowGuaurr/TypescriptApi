@@ -1,6 +1,18 @@
 // define types for data entries
-export type weather = 'sunny' | 'rainy' | 'stormy' | 'cloudy' | 'windy'
-export type visibility = 'great' | 'good' | 'ok' | 'poor'
+export enum weather{
+  sunny = 'sunny',
+  rainy = 'rainy',
+  stormy ='stormy',
+  cloudy = 'cloudy',
+  windy= 'windy',
+}
+
+export enum visibility{
+  great = 'great',
+  good = 'good',
+  ok ='ok',
+  poor = 'poor'
+}
 
 // define interface of data with the types previously defined
 export interface DiaryEntry {
