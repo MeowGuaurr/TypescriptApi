@@ -8,16 +8,16 @@ router.get('/', (_req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const {date, weather, visibility, comment} = req.body
+  try {
+    const addNewDiaryEntry = toNewDiaryEntry(req.body)
 
-  const newDiaryEntry = diaryServices.addDiaryEntry(
-    {date, 
-    weather, 
-    visibility, 
-    comment
-  })
+    const newDiaryEntry = diaryServices.addDiaryEntry(addNewDiaryEntry)
 
-  res.json(newDiaryEntry)
+    res.json(newDiaryEntry)
+
+  } catch (e) {
+    res.status(400).send(e.message)
+  }
 })
 
 router.get('/:id', (req, res) => {
